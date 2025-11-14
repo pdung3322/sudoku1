@@ -305,7 +305,7 @@ if not st.session_state.started:
         col_left, col_mid, col_right = st.columns([1, 2, 1])
 
         with col_mid:
-            size_text = st.selectbox("Chọn kích thước:", ["9x9"], index=0)
+            size_text = st.selectbox("Chọn kích thước:", ["9x9", "16x16", "25x25"], index=0)
             level = st.selectbox("Chọn mức độ:", ["Dễ", "Trung bình", "Khó"], index=1)
             source = st.selectbox("Nguồn đề:", ["Tạo ngẫu nhiên", "Tự nhập thủ công", "Mở file CSV"])
 
@@ -388,7 +388,7 @@ with col_board:
             disabled = initial[r][c] != 0 and not st.session_state.auto_play
             out = row_cols[c].text_input(
                 "",
-                max_chars=1,
+                max_chars=2,
                 key=key,
                 disabled=disabled
             )
@@ -427,3 +427,4 @@ if st.session_state.message:
         st.error(st.session_state.message)
     else:
         st.info(st.session_state.message)
+

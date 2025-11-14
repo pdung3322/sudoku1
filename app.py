@@ -298,7 +298,7 @@ if not st.session_state.started:
         st.session_state.csv_content = csv_content
         st.session_state.show_steps = False
         init_puzzle()
-        st.experimental_rerun()
+        st.rerun()
 
     st.stop()
 
@@ -380,3 +380,4 @@ if st.session_state.get("show_steps", False):
         with st.expander("Quá trình giải (điền từng ô)", expanded=False):
             for i, (r, c, v) in enumerate(steps, start=1):
                 st.write(f"Bước {i}: điền **{v}** vào ô hàng {r+1}, cột {c+1}")
+

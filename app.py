@@ -237,7 +237,7 @@ if not st.session_state.started:
             st.session_state.csv_content = None
         st.session_state.need_new_puzzle = True
         st.session_state.error_msg = ""
-        st.experimental_rerun()
+        st.rerun()
 
     st.stop()
 
@@ -258,7 +258,7 @@ top_left, top_right = st.columns([4,1])
 with top_right:
     if st.button("⬅ Quay lại màn hình chọn"):
         st.session_state.started = False
-        st.experimental_rerun()
+        st.rerun()
 
 # Hiển thị lỗi CSV nếu có
 if st.session_state.get("error_msg"):
@@ -368,4 +368,7 @@ if submitted:
             st.error("Không thể giải được bài này.")
         st.session_state.last_action_done = "solve"
 
-    st.experimental_rerun()
+    st.rerun()
+
+
+
